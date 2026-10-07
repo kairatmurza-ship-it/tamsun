@@ -1,0 +1,10 @@
+node_modules
+dist
+data
+.git
+.env
+open.txt
+error-handling-audit.md
+*.md
+lib/x64
+lib/x86

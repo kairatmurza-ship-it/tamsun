@@ -1,0 +1,19 @@
+services:
+  tamsun:
+    build: .
+    image: tamsun:latest
+    ports:
+      - "8765:8765"
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      TAMSUN_BIND: "+"
+      TAMSUN_PORT: "8765"
+      TAMSUN_HOSTS: ${TAMSUN_HOSTS:-}
+      TAMSUN_SQLITE_LIB: /opt/sqlite
+    volumes:
+      - tamsun-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  tamsun-data:
